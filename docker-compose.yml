@@ -1,0 +1,20 @@
+# Versão do Docker Compose
+version: '3.8'
+
+# Definição do serviço da aplicação
+services:
+  # Serviço da sua API FastAPI
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual
+    build: .
+    container_name: api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual no contêiner. Isso tem dois benefícios:
+      # 1. O arquivo do banco de dados (escola.db) será criado no seu computador,
+      #    garantindo que os dados não sejam perdidos ao recriar o contêiner.
+      # 2. Alterações no código-fonte são refletidas instantaneamente no contêiner,
+      #    o que é ideal para desenvolvimento com a flag --reload.
+      - .:/app
+

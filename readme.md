@@ -49,6 +49,43 @@ Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e
 
    Aqui você pode testar todos os endpoints da API de forma interativa.
 
+
+7. **Criando o dockerfile usando o gemini:**
+
+- Prompt: "Crie um dockerfile baseado nessa aplicação, @app.py"
+
+
+8. **Rodando com docker:**
+
+  ```
+  docker build -t api .
+  ```
+
+  ```
+  docker run -p 8000:8000 api
+  ```
+
+  ```
+  http://172.24.84.184:8000/docs
+  ```
+
+
+9. **Criando o docker compose usando o gemini:**
+
+- Prompt: "Crie um docker compose para minha aplicação, desconsiderando as configuracoes de banco de dados"
+
+
+10. **Rodando com docker compose:**
+
+  ```
+  docker compose up
+  ```
+
+
+
+
+
+
 ---
 
 ## Estrutura do Projeto
